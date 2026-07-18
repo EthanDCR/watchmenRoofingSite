@@ -1,12 +1,12 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useEffect } from "react";
+import { motion, useAnimationControls } from "motion/react";
 import styles from "./Hero.module.css";
 
-// Matches the --ease-out token defined in globals.css
 const EASE_OUT = [0.22, 1, 0.36, 1] as const;
+const HOBBLE_INTERVAL_MS = 5000;
 
-// Parent: triggers staggered reveal of children
 const containerVariants = {
   hidden: {},
   visible: {
@@ -17,7 +17,6 @@ const containerVariants = {
   },
 };
 
-// Each child drops down from the nav and fades in
 const itemVariants = {
   hidden: { opacity: 0, y: -28 },
   visible: {
@@ -28,9 +27,22 @@ const itemVariants = {
 };
 
 export default function Hero() {
+  const ctaControls = useAnimationControls();
+
+  useEffect(() => {
+    const hobbleTimer = setInterval(() => {
+      ctaControls.start({
+        rotate: [0, -8, 8, -6, 6, -3, 3, 0],
+        transition: { duration: 0.55, ease: "easeInOut" },
+      });
+    }, HOBBLE_INTERVAL_MS);
+
+    return () => clearInterval(hobbleTimer);
+  }, [ctaControls]);
+
   return (
     <section className={styles.hero}>
-      {/* Rings breathe in slowly behind the content */}
+      {/* Rings breathe in slowly behind everything */}
       <motion.div
         className={styles.ringsWrapper}
         initial={{ opacity: 0 }}
@@ -41,34 +53,57 @@ export default function Hero() {
       </motion.div>
 
       <div className={`container ${styles.content}`}>
+        {/* ── Left column: text ── */}
         <motion.div
+          className={styles.textCol}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.p variants={itemVariants} className={styles.eyebrow}>
-            Commercial Roofing &amp; Storm Restoration — Tulsa, OK
+            Storm Damage Roofing — Tulsa, OK &amp; Surrounding Areas
           </motion.p>
 
           <motion.h1 variants={itemVariants} className={styles.headline}>
-            We track every storm.<br />
-            <em>Then we protect your roof.</em>
+            Storm damage doesn&rsquo;t wait.<br />
+            <em>Neither do we.</em>
           </motion.h1>
 
           <motion.p variants={itemVariants} className={styles.subhead}>
-            The United Guardian leadership team built this exact model at a national
-            roofing company — live storm tracking, a proven public adjuster network,
-            and a production process that keeps sales and execution separate.
-            Now we&rsquo;re bringing that playbook to Tulsa.
+            United Guardian monitors storm activity across the region so we&rsquo;re
+            on the ground fast when severe weather hits. We inspect your roof,
+            document the damage, and manage your insurance claim from start to finish.
           </motion.p>
 
           <motion.a
             variants={itemVariants}
             href="#contact"
             className={styles.cta}
+            animate={ctaControls}
+            style={{ display: "inline-block" }}
           >
             Request a Free Inspection
           </motion.a>
+        </motion.div>
+
+        {/* ── Right column: video ── */}
+        <motion.div
+          className={styles.videoCol}
+          initial={{ opacity: 0, x: 48 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: EASE_OUT, delay: 0.75 }}
+        >
+          <div className={styles.videoFrame}>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className={styles.video}
+            >
+              <source src="/comRoof1.mp4" type="video/mp4" />
+            </video>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { motion, useAnimationControls } from "motion/react";
+import { useState } from "react";
 import styles from "./Nav.module.css";
 
 const NAV_LINKS = [
@@ -12,22 +11,8 @@ const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ] as const;
 
-const HOBBLE_INTERVAL_MS = 6000;
-
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const ctaControls = useAnimationControls();
-
-  useEffect(() => {
-    const hobbleTimer = setInterval(() => {
-      ctaControls.start({
-        rotate: [0, -8, 8, -6, 6, -3, 3, 0],
-        transition: { duration: 0.55, ease: "easeInOut" },
-      });
-    }, HOBBLE_INTERVAL_MS);
-
-    return () => clearInterval(hobbleTimer);
-  }, [ctaControls]);
 
   return (
     <header className={styles.header}>
@@ -55,14 +40,9 @@ export default function Nav() {
               </li>
             ))}
             <li>
-              <motion.a
-                href="#contact"
-                className={styles.cta}
-                animate={ctaControls}
-                style={{ display: "inline-block" }}
-              >
+              <a href="#contact" className={styles.cta}>
                 Request Free Inspection
-              </motion.a>
+              </a>
             </li>
           </ul>
         </nav>

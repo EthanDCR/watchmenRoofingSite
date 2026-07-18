@@ -16,10 +16,21 @@
   pointer-events: none;
 }
 
-/* ─── Content ───────────────────────────────────────────────────────────────── */
+/* ─── Two-column layout ─────────────────────────────────────────────────────── */
 .content {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+}
+
+/* ─── Left: text ────────────────────────────────────────────────────────────── */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* ─── Eyebrow ───────────────────────────────────────────────────────────────── */
@@ -36,7 +47,7 @@
 
 /* ─── Headline ──────────────────────────────────────────────────────────────── */
 .headline {
-  font-size: clamp(2rem, 4.5vw, 3.75rem);
+  font-size: clamp(2rem, 3.8vw, 3.5rem);
   font-weight: 700;
   line-height: 1.08;
   color: var(--paper-50);
@@ -51,10 +62,10 @@
 
 /* ─── Subhead ───────────────────────────────────────────────────────────────── */
 .subhead {
-  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  font-size: clamp(0.88rem, 1.1vw, 1rem);
   line-height: 1.7;
   color: var(--slate-300);
-  max-width: 52ch;
+  max-width: 48ch;
   margin-bottom: var(--space-8);
 }
 
@@ -75,4 +86,54 @@
 
 .cta:hover {
   background-color: var(--gold-300);
+}
+
+/* ─── Right: video ──────────────────────────────────────────────────────────── */
+.videoCol {
+  position: relative;
+  margin-left: -4rem;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 28%,
+    black 82%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 28%,
+    black 82%,
+    transparent 100%
+  );
+}
+
+.videoFrame {
+  overflow: hidden;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ─── Responsive ────────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    min-height: calc(100vh - 100px);
+    padding-block: var(--space-12);
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .videoCol {
+    /* Constrain so it doesn't dominate on tablet portrait */
+    max-width: 520px;
+  }
 }
