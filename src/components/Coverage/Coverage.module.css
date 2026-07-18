@@ -1,0 +1,143 @@
+/* ─── Coverage ───────────────────────────────────────────────────────────────── */
+/* Dark section — alternates from light Process above */
+.section {
+  background-color: var(--ink-900);
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-8);
+  border-top: 1px solid var(--ink-700);
+}
+
+/* ─── Header ────────────────────────────────────────────────────────────────── */
+.header {
+  margin-bottom: var(--space-10);
+  max-width: 600px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  margin-bottom: var(--space-2);
+  max-width: none;
+}
+
+.heading {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--paper-50);
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--gold-300);
+}
+
+.sub {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--slate-300);
+  max-width: 52ch;
+}
+
+/* ─── Markets grid ───────────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-4);
+}
+
+/* ─── Individual market card ─────────────────────────────────────────────────── */
+.market {
+  border-radius: 4px;
+  padding: var(--space-5) var(--space-4);
+  border: 1px solid var(--ink-700);
+}
+
+.marketActive {
+  background-color: var(--ink-800);
+  border-top: 2px solid var(--gold-500);
+}
+
+.marketPending {
+  background-color: transparent;
+  border-top: 2px solid var(--ink-700);
+  opacity: 0.55;
+}
+
+/* ─── Card header ────────────────────────────────────────────────────────────── */
+.marketTop {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.marketState {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--paper-100);
+  line-height: 1.2;
+}
+
+.marketLabel {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.labelActive {
+  color: var(--gold-500);
+}
+
+.labelPending {
+  color: var(--slate-500);
+}
+
+/* ─── City list ──────────────────────────────────────────────────────────────── */
+.cityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.cityList li {
+  font-size: 0.78rem;
+  color: var(--slate-500);
+  line-height: 1.4;
+}
+
+.marketActive .cityList li {
+  color: var(--slate-300);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    height: auto;
+    min-height: calc(100vh - 100px);
+    padding-block: var(--space-12);
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 540px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
