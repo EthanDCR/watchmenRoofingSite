@@ -3,7 +3,10 @@
 .section {
   background-color: var(--paper-50);
   border-top: 1px solid var(--paper-200);
-  padding-block: var(--space-16);
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-8);
 }
 
 /* ─── Grid ──────────────────────────────────────────────────────────────────── */
@@ -17,15 +20,16 @@
 .item {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  padding-top: var(--space-4);
+  gap: var(--space-6);
+  padding: var(--space-8);
+  padding-top: var(--space-12);
   border-top: 2px solid var(--gold-500);
 }
 
 /* ─── Number ────────────────────────────────────────────────────────────────── */
 .num {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   color: var(--gold-500);
@@ -34,7 +38,7 @@
 /* ─── Title ─────────────────────────────────────────────────────────────────── */
 .title {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.2;
   color: var(--ink-800);
@@ -42,10 +46,10 @@
 
 /* ─── Body ──────────────────────────────────────────────────────────────────── */
 .body {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   line-height: 1.7;
   color: var(--slate-500);
-  max-width: 34ch;
+  max-width: 38ch;
 }
 
 /* ─── Responsive ────────────────────────────────────────────────────────────── */

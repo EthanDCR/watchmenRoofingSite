@@ -1,7 +1,7 @@
 /* ─── Services ──────────────────────────────────────────────────────────────── */
 .section {
   background-color: var(--ink-900);
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
   display: flex;
   align-items: center;
   padding-block: var(--space-8);
@@ -149,7 +149,6 @@
 /* ─── Responsive ────────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .section {
-    height: auto;
     min-height: calc(100vh - 100px);
     padding-block: var(--space-12);
   }

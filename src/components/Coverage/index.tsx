@@ -55,7 +55,7 @@ export default function Coverage() {
             Tulsa-based. <em>Midwest-bound.</em>
           </h2>
           <p className={styles.sub}>
-            We started where the storms are worst — Tornado Alley. As we earn
+            We started where the storms are worst As we earn
             our licenses state by state, we bring the same crew, the same
             standards, and the same results to every market we enter.
           </p>
