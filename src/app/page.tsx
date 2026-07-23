@@ -4,6 +4,7 @@ import ProofStrip from "@/components/ProofStrip";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Coverage from "@/components/Coverage";
+import Contact from "@/components/Contact";
 
 export default function HomePage() {
   return (
@@ -15,7 +16,7 @@ export default function HomePage() {
         <Services />
         <Process />
         <Coverage />
-        {/* Footer will be added here */}
+        <Contact />
       </main>
     </>
   );
