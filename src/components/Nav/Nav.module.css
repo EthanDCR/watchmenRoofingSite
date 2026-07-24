@@ -22,7 +22,7 @@
 }
 
 .logo {
-  height: 280px;
+  height: 250px;
   width: auto;
   display: block;
 }
@@ -45,7 +45,7 @@
 }
 
 .link:hover {
-  color: var(--gold-300);
+  color: var(--orange-300);
 }
 
 /* ─── CTA button ────────────────────────────────────────────────────────────── */
@@ -56,7 +56,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-950);
-  background-color: var(--gold-500);
+  background-color: var(--orange-500);
   padding: var(--space-2) var(--space-4);
   border-radius: 2px;
   transition:
@@ -65,7 +65,7 @@
 }
 
 .cta:hover {
-  background-color: var(--gold-300);
+  background-color: var(--orange-300);
 }
 
 /* ─── Mobile hamburger ──────────────────────────────────────────────────────── */
@@ -89,7 +89,7 @@
 }
 
 .hamburger:hover .bar {
-  background-color: var(--gold-300);
+  background-color: var(--orange-300);
 }
 
 /* ─── Mobile drawer ─────────────────────────────────────────────────────────── */
@@ -118,7 +118,7 @@
 }
 
 .drawerLink:hover {
-  color: var(--gold-300);
+  color: var(--orange-300);
 }
 
 .drawerCta {
@@ -129,7 +129,7 @@
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--ink-950);
-  background-color: var(--gold-500);
+  background-color: var(--orange-500);
   padding: var(--space-3) var(--space-4);
   border-radius: 2px;
 }

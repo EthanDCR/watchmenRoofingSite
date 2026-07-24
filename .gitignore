@@ -9,6 +9,11 @@ node_modules/
 build/
 dist/
 
+# ─── Media files ─────────────────────────────────────────────────────────────
+*.mp4
+*.mov
+*.avi
+
 # ─── Environment variables ────────────────────────────────────────────────────
 .env
 .env.local

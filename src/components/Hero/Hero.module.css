@@ -40,7 +40,7 @@
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold-500);
+  color: var(--orange-500);
   margin-bottom: var(--space-4);
   max-width: none;
 }
@@ -57,7 +57,7 @@
 
 .headline em {
   font-style: italic;
-  color: var(--gold-300);
+  color: var(--orange-300);
 }
 
 /* ─── Subhead ───────────────────────────────────────────────────────────────── */
@@ -78,20 +78,19 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-950);
-  background-color: var(--gold-500);
+  background-color: var(--orange-500);
   padding: var(--space-3) var(--space-8);
   border-radius: 2px;
   transition: background-color var(--duration-base) var(--ease-out);
 }
 
 .cta:hover {
-  background-color: var(--gold-300);
+  background-color: var(--orange-300);
 }
 
 /* ─── Right: video ──────────────────────────────────────────────────────────── */
 .videoCol {
   position: relative;
-  margin-left: -4rem;
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,

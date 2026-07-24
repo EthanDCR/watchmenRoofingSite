@@ -29,7 +29,7 @@
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold-500);
+  color: var(--orange-500);
   margin-bottom: var(--space-2);
   max-width: none;
 }
@@ -44,7 +44,7 @@
 
 .heading em {
   font-style: italic;
-  color: var(--gold-700);
+  color: var(--orange-700);
 }
 
 .sub {
@@ -82,6 +82,28 @@
   color: var(--slate-500);
 }
 
+.detailRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.copyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--slate-300);
+  padding: var(--space-1);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-out);
+  flex-shrink: 0;
+}
+
+.copyBtn:hover {
+  color: var(--orange-500);
+}
+
 .detailValue {
   font-size: 1.05rem;
   font-weight: 600;
@@ -94,7 +116,7 @@ a.detailValue {
 }
 
 a.detailValue:hover {
-  color: var(--gold-700);
+  color: var(--orange-700);
 }
 
 /* ─── Right column: form ───────────────────────────────────────────────────── */
@@ -145,7 +167,7 @@ a.detailValue:hover {
 
 .input:focus,
 .textarea:focus {
-  border-color: var(--gold-500);
+  border-color: var(--orange-500);
 }
 
 .textarea {
@@ -160,7 +182,7 @@ a.detailValue:hover {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-950);
-  background-color: var(--gold-500);
+  background-color: var(--orange-500);
   padding: var(--space-4) var(--space-8);
   border-radius: 2px;
   cursor: pointer;
@@ -171,7 +193,31 @@ a.detailValue:hover {
 }
 
 .submit:hover {
-  background-color: var(--gold-300);
+  background-color: var(--orange-300);
+}
+
+/* ─── Success state ────────────────────────────────────────────────────────── */
+.success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-12) var(--space-8);
+  border-top: 2px solid var(--orange-500);
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--ink-800);
+  max-width: none;
+}
+
+.successBody {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--slate-500);
 }
 
 /* ─── Responsive ────────────────────────────────────────────────────────────── */

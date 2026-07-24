@@ -19,7 +19,7 @@ const POINTS = [
   {
     num: "03",
     title: "Production That Delivers",
-    body: "Our sales and production teams are separate — by design. Once you sign, a dedicated crew owns your project through completion and warranty, no handoff drop.",
+    body: "Our sales and production teams are separate by design. Once you sign, a dedicated crew owns your project through completion and warranty, no handoff drop.",
   },
 ] as const;
 

@@ -1,7 +1,11 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import styles from "./Contact.module.css";
+import { submitContactForm } from "@/app/actions/contactForm"
+
+
 
 const EASE_OUT = [0.22, 1, 0.36, 1] as const;
 
@@ -13,12 +17,21 @@ const fadeUp = (delay = 0) => ({
 });
 
 const DETAILS = [
-  { label: "Phone", value: "phone number", href: null },
-  { label: "Email", value: " email address", href: null },
+  { label: "Phone", value: "(850)797-9698", href: null },
+  { label: "Email", value: "contact@watchmenRoofingllc.com", href: null },
 //  { label: "Service Area", value: "Tulsa, OK & Surrounding Areas", href: null },
 ] as const;
 
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false)
+  const [copied, setCopied] = useState<string | null>(null)
+
+  const handleCopy = (value: string) => {
+    navigator.clipboard.writeText(value)
+    setCopied(value)
+    setTimeout(() => setCopied(null), 2000)
+  }
+
   return (
     <section id="contact" className={styles.section}>
       <div className={`container ${styles.layout}`}>
@@ -26,7 +39,7 @@ export default function Contact() {
         <motion.div className={styles.info} {...fadeUp()}>
           <p className={styles.eyebrow}>Get In Touch</p>
           <h2 className={styles.heading}>
-            Ready to protect <em>your home?</em>
+            Ready to protect <em>your property?</em>
           </h2>
           <p className={styles.sub}>
             Schedule a free roof inspection and we&rsquo;ll assess any storm damage,
@@ -38,21 +51,65 @@ export default function Contact() {
             {DETAILS.map((d) => (
               <li key={d.label} className={styles.detailItem}>
                 <span className={styles.detailLabel}>{d.label}</span>
-                {d.href ? (
-                  <a href={d.href} className={styles.detailValue}>{d.value}</a>
-                ) : (
-                  <span className={styles.detailValue}>{d.value}</span>
-                )}
+                <div className={styles.detailRow}>
+                  {d.href ? (
+                    <a href={d.href} className={styles.detailValue}>{d.value}</a>
+                  ) : (
+                    <span className={styles.detailValue}>{d.value}</span>
+                  )}
+                  <button
+                    className={styles.copyBtn}
+                    onClick={() => handleCopy(d.value)}
+                    aria-label={`Copy ${d.label}`}
+                  >
+                    {copied === d.value ? (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    ) : (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                      </svg>
+                    )}
+                  </button>
+                </div>
               </li>
             ))}
           </ul>
         </motion.div>
 
+        <AnimatePresence mode="wait">
+        {submitted ? (
+          <motion.div
+            key="success"
+            className={styles.success}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: EASE_OUT }}
+          >
+            <p className={styles.successTitle}>Request received.</p>
+            <p className={styles.successBody}>
+              We&rsquo;ll be in touch shortly to schedule your free inspection.
+            </p>
+          </motion.div>
+        ) : (
         <motion.form
           className={styles.form}
           {...fadeUp(0.15)}
-          onSubmit={(e) => e.preventDefault()}
-        >
+        
+  onSubmit={async (e) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    await submitContactForm({
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+      address: (form.elements.namedItem('address') as HTMLInputElement).value,
+    })
+    setSubmitted(true)
+  }}
+	  >
           <div className={styles.row}>
             <label className={styles.field}>
               <span className={styles.label}>Name</span>
@@ -79,6 +136,8 @@ export default function Contact() {
             Submit Request
           </button>
         </motion.form>
+        )}
+        </AnimatePresence>
 
       </div>
     </section>

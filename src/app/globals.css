@@ -11,10 +11,10 @@
   --paper-100: #e9e5da;
   --paper-200: #dbd5c6;
 
-  /* Gold — brand accent, CTAs, decorative marks */
-  --gold-300: #d8bd85;
-  --gold-500: #b8924e;
-  --gold-700: #8c6c34;
+  /* Orange — brand accent, CTAs, decorative marks */
+  --orange-300: #f0946a;
+  --orange-500: #d9581a;
+  --orange-700: #a83c0c;
 
   /* Slate — secondary text, dividers */
   --slate-300: #a9b2bf;
@@ -63,6 +63,7 @@ html {
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  overflow-x: clip;
 }
 
 body {
@@ -73,6 +74,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 /* ─── Typography Defaults ──────────────────────────────────────────────────── */

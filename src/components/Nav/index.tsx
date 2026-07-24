@@ -7,6 +7,7 @@ import styles from "./Nav.module.css";
 const NAV_LINKS = [
   { label: "Approach", href: "#approach" },
   { label: "Services", href: "#services" },
+  { label: "Work", href: "#work" },
   { label: "Coverage", href: "#coverage" },
   { label: "Contact", href: "#contact" },
 ] as const;
@@ -18,10 +19,10 @@ export default function Nav() {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         {/* Logo lockup */}
-        <a href="#" className={styles.logoLink} aria-label="United Guardian Roofing & Construction — home">
+        <a href="#" className={styles.logoLink} aria-label="Watchmen Roofing — home">
           <Image
-            src="/newColorLogo.png"
-            alt="United Guardian Roofing & Construction"
+            src="/updatedWatchmenLogo.png"
+            alt="Watchmen Roofing"
             width={480}
             height={150}
             priority

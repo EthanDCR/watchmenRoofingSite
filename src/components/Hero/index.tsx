@@ -70,7 +70,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p variants={itemVariants} className={styles.subhead}>
-            United Guardian monitors storm activity across the region so we&rsquo;re
+            Watchmen Roofing monitors storm activity across the region so we&rsquo;re
             on the ground fast when severe weather hits. We inspect your roof,
             document the damage, and manage your insurance claim from start to finish.
           </motion.p>
@@ -101,7 +101,7 @@ export default function Hero() {
               playsInline
               className={styles.video}
             >
-              <source src="/comRoof1.mp4" type="video/mp4" />
+              <source src="/jon-vids/st-thomas-square.mp4" type="video/mp4" />
             </video>
           </div>
         </motion.div>
@@ -115,12 +115,12 @@ function StormRings() {
   const cy = 360;
 
   const rings = [
-    { rx: 72,  ry: 58,  rot: -8, stroke: "var(--gold-500)", sw: 1.5, op: 0.6  },
-    { rx: 155, ry: 122, rot:  5, stroke: "var(--gold-500)", sw: 1.2, op: 0.42 },
-    { rx: 248, ry: 192, rot: -4, stroke: "var(--gold-500)", sw: 1.0, op: 0.28 },
-    { rx: 355, ry: 270, rot:  6, stroke: "var(--gold-300)", sw: 0.8, op: 0.18 },
-    { rx: 475, ry: 358, rot: -3, stroke: "var(--gold-300)", sw: 0.6, op: 0.11 },
-    { rx: 610, ry: 455, rot:  4, stroke: "var(--gold-300)", sw: 0.5, op: 0.06 },
+    { rx: 72,  ry: 58,  rot: -8, stroke: "var(--orange-500)", sw: 1.5, op: 0.6  },
+    { rx: 155, ry: 122, rot:  5, stroke: "var(--orange-500)", sw: 1.2, op: 0.42 },
+    { rx: 248, ry: 192, rot: -4, stroke: "var(--orange-500)", sw: 1.0, op: 0.28 },
+    { rx: 355, ry: 270, rot:  6, stroke: "var(--orange-300)", sw: 0.8, op: 0.18 },
+    { rx: 475, ry: 358, rot: -3, stroke: "var(--orange-300)", sw: 0.6, op: 0.11 },
+    { rx: 610, ry: 455, rot:  4, stroke: "var(--orange-300)", sw: 0.5, op: 0.06 },
   ] as const;
 
   return (
@@ -132,7 +132,7 @@ function StormRings() {
       aria-hidden="true"
       focusable="false"
     >
-      <circle cx={cx} cy={cy} r="4" fill="var(--gold-500)" opacity="0.75" />
+      <circle cx={cx} cy={cy} r="4" fill="var(--orange-500)" opacity="0.75" />
       {rings.map((r, i) => (
         <ellipse
           key={i}

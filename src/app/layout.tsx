@@ -26,7 +26,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 // ─── Site metadata ───────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "United Guardian Roofing & Construction",
+  title: "Watchmen Roofing",
   description:
     "Commercial roofing and storm restoration contractor based in Tulsa, Oklahoma. " +
     "We track the storm, protect the roof.",
