@@ -101,7 +101,7 @@ export default function Hero() {
               playsInline
               className={styles.video}
             >
-              <source src="/jon-vids/st-thomas-square.mp4" type="video/mp4" />
+              <source src="https://ruwcyviwkhtrxmgullug.supabase.co/storage/v1/object/sign/watchmen-videos/st-thomas-square.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80MjJlYjM1YS02NGM4LTQ2MDUtOGU0ZC0wZDBiYmM1Yzg0NjIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3YXRjaG1lbi12aWRlb3Mvc3QtdGhvbWFzLXNxdWFyZS5tcDQiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg0ODc4NTk2LCJleHAiOjE4MTY0MTQ1OTZ9.F-ADXz1D8xv9CTcrWSD4DkwGAfI-b1jVUGpaLh762Nw" type="video/mp4" />
             </video>
           </div>
         </motion.div>

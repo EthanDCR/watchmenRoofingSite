@@ -6,10 +6,10 @@ import styles from "./WorkShowcase.module.css";
 const EASE_OUT = [0.22, 1, 0.36, 1] as const;
 
 const PROJECTS = [
-  { src: "/jon-vids/beach-professional-center.mp4",    label: "Beach Professional Center"   },
-  { src: "/jon-vids/central-baptist-church.mp4",       label: "Central Baptist Church"       },
-  { src: "/jon-vids/first-presbyterian-church.mp4",    label: "First Presbyterian Church"    },
-  { src: "/jon-vids/tpo-roof-inspections-walkthrough.mp4", label: "TPO Roof Inspections"      },
+  { src: "https://ruwcyviwkhtrxmgullug.supabase.co/storage/v1/object/sign/watchmen-videos/beach-professional-center.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80MjJlYjM1YS02NGM4LTQ2MDUtOGU0ZC0wZDBiYmM1Yzg0NjIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3YXRjaG1lbi12aWRlb3MvYmVhY2gtcHJvZmVzc2lvbmFsLWNlbnRlci5tcDQiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg0ODc4NTQ0LCJleHAiOjE4MTY0MTQ1NDR9.ZnVSO7h9vTPgEyhSnhu-dSFha3Go4fXSJdbMGThJAwE", label: "Beach Professional Center" },
+  { src: "https://ruwcyviwkhtrxmgullug.supabase.co/storage/v1/object/sign/watchmen-videos/central-baptist-church.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80MjJlYjM1YS02NGM4LTQ2MDUtOGU0ZC0wZDBiYmM1Yzg0NjIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3YXRjaG1lbi12aWRlb3MvY2VudHJhbC1iYXB0aXN0LWNodXJjaC5tcDQiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg0ODc4NTYwLCJleHAiOjE4MTY0MTQ1NjB9.3njBz-XsA2J8SO7MTJb-eMSGM6sP1Ws_EVft80up184", label: "Central Baptist Church" },
+  { src: "https://ruwcyviwkhtrxmgullug.supabase.co/storage/v1/object/sign/watchmen-videos/first-presbyterian-church.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80MjJlYjM1YS02NGM4LTQ2MDUtOGU0ZC0wZDBiYmM1Yzg0NjIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3YXRjaG1lbi12aWRlb3MvZmlyc3QtcHJlc2J5dGVyaWFuLWNodXJjaC5tcDQiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg0ODc4NTgxLCJleHAiOjE4MTY0MTQ1ODF9.M7-Eusjuo553qfnG5FoyCIEtCalZwLKKad2t3hW8A0s", label: "First Presbyterian Church" },
+  { src: "https://ruwcyviwkhtrxmgullug.supabase.co/storage/v1/object/sign/watchmen-videos/tpo-roof-inspections-walkthrough.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80MjJlYjM1YS02NGM4LTQ2MDUtOGU0ZC0wZDBiYmM1Yzg0NjIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3YXRjaG1lbi12aWRlb3MvdHBvLXJvb2YtaW5zcGVjdGlvbnMtd2Fsa3Rocm91Z2gubXA0Iiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NDg3ODYxNiwiZXhwIjoxODE2NDE0NjE2fQ.E_jBjbdP6_sOtOWeBtkglHUiMt4sJo1hnNFiqEEQxGc", label: "TPO Roof Inspections" },
 ] as const;
 
 export default function WorkShowcase() {
